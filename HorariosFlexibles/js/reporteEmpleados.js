@@ -2,6 +2,8 @@ $(function () {
     var strHtml = "<img src='http://cloud.metalsa.com/BusServiceMetalsa-war/ImagenMetalsa?personId=" + personId +
         "' width=40 height=47  class='vcenter'/>";
     cargaMenuHF();
+    $.blockUI.defaults.message = 'Procesando...';
+    $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
     $("#user-th-pic").append(strHtml);
     var fecha = $.getLunes();
     $("#nombre").append(fullName);
@@ -17,8 +19,6 @@ $(function () {
     });
     var domingo = $.formateaFechaNumerico(fecha);
     generaReporte(lunes, domingo, personId);
-    $.blockUI.defaults.message = 'Procesando...';
-    $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 });
 
 function actualizaReporte(form) {
@@ -33,27 +33,24 @@ function actualizaReporte(form) {
 
 function generaReporte(fechaInicial, fechaFinal, personId) {
     var srtHtml;
-    var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + 13572 +
+    var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personId +
         "/fechaInicio/" + fechaInicial + "/fechaFin/" + fechaFinal + "/reporteEmpleadosHF";
     $.getJSON(urlServ,
         function (data) {
             $("#totalHoras").append("<label id='totalHorasLbl'>" + data.totalHoras + "</label>");
-            $("#reporte").append("<tbody class='repDia'>");
+            $("#reporte").append("<tbody class='repEmpleado'>");
             if (data.empleados != null) {
                 $.each(data.empleados, function (i, item) {
-                    srtHtml = "<tr><td  style='display:none;'>" + item.personId + ",</td><td>" + item.employeeId +
-                        "</td><td>" + item.fullName + "</td>" + "<td>" + item.horas + "</td>" +
-                        "<td><input type='button' value='Ver detalle' onclick='verDetalle(" +
-                        fechaInicial + "," + fechaFinal + "," + item.personId + ")'/></td></tr>";
+                    srtHtml = "<tr><td>" + item.fullName + "</td>" + "<td>" + item.horas + "</td>" +
+                        "<td><button type='button' class='btn btn-default ver-detalle-btn mBlue_bg center-block' aria-label='Left Align'" +
+                        " onclick='verDetalle(" + fechaInicial + "," + fechaFinal + "," + item.personId + 
+                        ")'> <span class='glyphicon glyphicon-list-alt'" + "aria-hidden='true'></span></button></td></tr>";
                     $("#reporte").append(srtHtml);
                 });
             }
             $("#reporte").append("</tbody>");
         });
-    $("#reporte").kendoGrid({
-        selectable: true,
-        change: select
-    });
+    $("#reporte").kendoGrid();
 }
 
 function select() {
@@ -75,17 +72,20 @@ function verDetalle(fechaInicial, fechaFinal, personIdEmp) {
     var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personIdEmp +
         "/fechaInicio/" + fechaInicial + "/fechaFin/" + fechaFinal + "/reportePersonalHF";
     $(".dtlEmpleado").remove();
-    var strHead = "<tr class='dtlEmpleado'><td>Fecha</td><td>Horas</td><td>Detalle</td></tr>";
+    var strHead = "<thead><tr class='dtlEmpleado'><th>Fecha</th><th>Horas</th><th>Detalle</th></tr></thead>";
     $("#reporteEmpleado").append(strHead);
     $.getJSON(urlServ,
         function (data) {
             if (data.dias != null) {
+                $("#reporteEmpleado").append("<tbody class='dtlEmpleado'>");
                 $.each(data.dias, function (i, item) {
-                    srtHtml = "<tr class='dtlEmpleado'><td>" + item.fechaF + "</td><td>" + item.horas + "</td>" +
-                        "<td><input type='button' value='Ver detalle' onclick='verDetalleDia(" +
-                        item.fecha + "," + personIdEmp + ")'/></td></tr>";
+                    srtHtml = "<tr><td>" + item.fechaF + "</td><td>" + item.horas + "</td>" +
+                        "<td><button type='button' class='btn btn-default ver-detalle-btn-mini mBlue_bg center-block' aria-label='Left Align'" +
+                        " onclick='verDetalle(" + item.fecha + ")'> <span class='glyphicon '" +
+                        "aria-hidden='true'></span></button></td></tr>";
                     $("#reporteEmpleado").append(srtHtml);
                 });
+                $("#reporteEmpleado").append("</tbody>");
             }
         });
     $("#dlgDetalleEmpleado").dialog({
@@ -99,25 +99,23 @@ function verDetalle(fechaInicial, fechaFinal, personIdEmp) {
 }
 
 function verDetalleDia(fecha, personIdEmp) {
-    var eventos;
     var srtHtml;
     var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personIdEmp +
         "/fecha/" + fecha + "/detalleDiaHF";
     $(".dtlDia").remove();
-    var strHead = "<tr class='dtlDia'><td>Hora</td><td>Tipo Evento</td><td>Descripcion</td></tr>";
+    var strHead = "<thead><tr class='dtlDia'><td>Hora</td><td>Tipo Evento</td><td>Descripcion</td></tr></thead>";
     $("#reporteDia").append(strHead);
     $.getJSON(urlServ,
         function (data) {
-            $.each(data, function (key, val) {
-                if (key == 'eventos') {
-                    eventos = val;
-                }
-            });
-            $.each(eventos, function (i, item) {
-                srtHtml = "<tr class='dtlDia'><td>" + item.fecha + "</td><td>" + item.lector + "</td>" +
-                    "<td>" + item.evento + "</td></tr>";
-                $("#reporteDia").append(srtHtml);
-            });
+            if (data.eventos != null) {
+                $("#reporteDia").append("<tbody class='dtlDia'>");
+                $.each(data.eventos, function (i, item) {
+                    srtHtml = "<tr><td>" + item.fecha + "</td><td>" + item.lector + "</td>" +
+                        "<td>" + item.evento + "</td></tr>";
+                    $("#reporteDia").append(srtHtml);
+                });
+                $("#reporteDia").append("</tbody>");
+            }
         });
     $("#dlgDetalleDia").dialog({
         modal: true,

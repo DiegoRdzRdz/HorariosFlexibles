@@ -58,16 +58,18 @@ function verDetalle(fecha) {
     var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personId +
         "/fecha/" + fecha + "/detalleDiaHF";
     $(".dtlDia").remove();
-    var strHead = "<tr class='dtlDia'><td>Hora</td><td>Tipo Evento</td><td>Descripcion</td></tr>";
+    var strHead = "<thead><tr class='dtlDia'><th>Hora</th><th>Tipo Evento</th><th>Descripcion</th></tr></thead>";
     $("#reporteDia").append(strHead);
     $.getJSON(urlServ,
         function (data) {
             if (data.eventos != null) {
+            $("#reporteDia").append("<tbody class='dtlDia'>");
                 $.each(data.eventos, function (i, item) {
                     strHtml = "<tr class='dtlDia'><td>" + item.fecha + "</td><td>" + item.lector + "</td>" +
                         "<td>" + item.evento + "</td></tr>";
                     $("#reporteDia").append(strHtml);
                 });
+            $("#reporteDia").append("</tbody>");
             }
         });
     $("#dlgDetalleDia").dialog({
@@ -78,5 +80,4 @@ function verDetalle(fecha) {
             }
         }
     });
-    $("#reporteDia").kendoGrid();
 }

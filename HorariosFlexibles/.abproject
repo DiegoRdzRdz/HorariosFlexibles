@@ -2,10 +2,10 @@
   "ProjectName": "HorariosFlexibles",
   "ProjectGuid": "b7fcfa96-a79f-4f22-97ed-8ae409b57f76",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.MMPApp",
-  "DisplayName": "MMP App",
+  "AppIdentifier": "com.telerik.PortalMetlasa",
+  "DisplayName": "Portal Metalsa",
   "Author": "",
-  "Description": "MMP App",
+  "Description": "Portal Metalsa",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -19,8 +19,7 @@
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "AndroidHardwareAcceleration": "false",
   "iOSStatusBarStyle": "Default",

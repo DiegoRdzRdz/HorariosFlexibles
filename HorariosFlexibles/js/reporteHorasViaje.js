@@ -4,7 +4,7 @@ $(function () {
     $("#user-th-pic").append(strHtml);
     cargaMenuHF();
     var strHtml;
-    var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + "-115" + "/empleadosHF";
+    var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personId + "/empleadosHF";
     $("#nombre").append(fullName);
     $.getJSON(urlServ,
         function (data) {
