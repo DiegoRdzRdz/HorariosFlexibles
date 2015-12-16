@@ -55,6 +55,11 @@ function goPage(page) {
         horas + "&notificaciones=" + notificaciones + "&permisos=" + permisos;
 }
 
+function goPageRepo() {
+    return "reportePersonal.html?personId=" + personId + "&fullName=" +  fullName + "&horas=" +
+        horas + "&notificaciones=" + notificaciones + "&permisos=" + permisos;
+}
+
 function reportePersonal(){
     goPage('reportePersonal');
 }

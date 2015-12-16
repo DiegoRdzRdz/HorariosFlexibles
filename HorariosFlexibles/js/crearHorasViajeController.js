@@ -6,7 +6,7 @@ creaHVApp.controller("crearHorasViajesCtrl", ['$scope','$http',function ($scope,
     $scope.comentarios; $scope.fecha; $scope.chkBoxMore6; 
     $scope.personId = decodeURIComponent($.urlParam('personId'));
     $scope.fullName = decodeURIComponent($.urlParam('fullName'));
-    $scope.urlToReportInd= "goPage('reportePersonal')";
+    $scope.urlToReportInd= goPageRepo();
     $scope.toggleModalCorrect = function(){ $scope.showModalCorrect = !$scope.showModalCorrect; };
     $scope.toggleModalIncorrect = function(){ $scope.showModalIncorrect = !$scope.showModalIncorrect; };
     $scope.toggleModalAlert = function(){ $scope.showModalAlert = !$scope.showModalAlert; };

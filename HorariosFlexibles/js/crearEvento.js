@@ -48,6 +48,8 @@ function crearEvento() {
         muestraMensaje(1, "No has seleccionado tipo de evento", "#dlgMessage");
     } else if (minutosSolicitados == 0) {
         muestraMensaje(1, "No has capturado el tiempo solicitados", "#dlgMessage");
+    } else if ($('#comentarios').val() == null || $('#comentarios').val() == '') {
+        muestraMensaje(1, "No has capturado el comentario", "#dlgMessage");
     } else if (valores[2] == 1 && minutosSolicitados > minutosDisponibles) {
         muestraMensaje(1, "No puedes solicitar mas tiempo que el de tu banco de horas", "#dlgMessage");
     } else {

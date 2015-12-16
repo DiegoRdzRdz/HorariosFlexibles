@@ -32,6 +32,7 @@ function generaReporte(personId) {
     var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personId + "/eventosPersonaHF";
     $.getJSON(urlServ,
         function (data) {
+        	$("#reporte").children().remove();
             $("#reporte").append("<tbody>");
             if (data.eventos != null) {
                 $.each(data.eventos, function (i, item) {

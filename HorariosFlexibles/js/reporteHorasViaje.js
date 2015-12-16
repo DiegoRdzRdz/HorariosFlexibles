@@ -51,8 +51,11 @@ function generaReporte(personId) {
                             comentario: item.comentario
                         });
                         strHtml = "<tr><td>" + item.fecha + "</td><td>" + item.horas + "</td>" +
-                            "<td>" + item.estatus + "</td><td><input type='button' value='Ver detalle' onclick='verDetalle(" +
-                            evento + ")'/></td></tr>";
+                            "<td>" + item.estatus + "</td><td>"+
+                            "<button type='button' class='btn btn-default ver-detalle-btn mBlue_bg center-block' aria-label='Left Align'" +
+                    		" onclick='verDetalle(" + evento + ")'> <span class='glyphicon glyphicon-list-alt'" +
+                    		"aria-hidden='true'></span></button>"+
+                            "</td></tr>";
                         $("#reporte").append(strHtml);
                     });
                 }
