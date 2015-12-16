@@ -43,7 +43,13 @@ html,body { font-family: "texgyreherosregular", sans-serif, Helvetica, Arial !im
 
 .ver-detalle-btn { width: 20px; height: 23px; border: none; border-radius: 0; color: #FFF; font-size: 2rem; }
 
-.ver-detalle-btn-mini { width: 20px; height: 20px; border: none; border-radius: 0; color: #FFF; font-size: 3rem;}
+.ver-detalle-btn-mini {height: 35px;
+    background: #02A8F3;
+    width: 60px;
+    color: #FFF;
+    font-size: 9px;
+    font-family: texgyreherosregular, Sans-Serif;
+}
 
 .suicher > .bootstrap-switch { position: relative; top: 25%; transform: translateY(-50%); transform: translateX(50%); }
 .bootstrap-switch-handle-on .bootstrap-switch-primary { max-width: 20px; }
@@ -131,6 +137,6 @@ html,body { font-family: "texgyreherosregular", sans-serif, Helvetica, Arial !im
 
 .bg_reporte-empleados { background: url('../img/bg_reporte-empleados.png') center center no-repeat; }
 
-.etiqueta {font-size: 14px; font-family: Verdana; font-weight: bold; text-align: right; 
+.etiqueta {font-size: 14px; font-family: Verdana; font-weight: bold; text-align: center; 
     background-color: #0066CC; color: #FFFFFF;}
-.textoEtiqueta {font-size: 14px; font-family: Verdana; }
+.textoEtiqueta {font-size: 14px; font-family: Verdana;  text-align: center;}

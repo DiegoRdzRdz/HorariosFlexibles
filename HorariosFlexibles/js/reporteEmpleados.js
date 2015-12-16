@@ -80,10 +80,9 @@ function verDetalle(fechaInicial, fechaFinal, personIdEmp) {
             if (data.dias != null) {
                 $("#reporteEmpleado").append("<tbody class='dtlEmpleado'>");
                 $.each(data.dias, function (i, item) {
-                    srtHtml = "<tr><td class='textoEtiqueta'>" + item.fechaF + "</td><td class='textoEtiqueta'>" + item.horas + "</td>" +
-                        "<td><button type='button' class='btn btn-default ver-detalle-btn-mini mBlue_bg center-block' aria-label='Left Align'" +
-                        " onclick='verDetalleDia(" + item.fecha + "," + item.personId + ")'> <span class='glyphicon '" +
-                        "aria-hidden='true'></span></button></td></tr>";
+                    srtHtml = "<tr><td style='width: 90px' class='textoEtiqueta'>" + item.fechaF + "</td><td style='width: 70px' class='textoEtiqueta'>" + item.horas + "</td>" +
+                        "<td><input type='button' style='width: 85px' class='ver-detalle-btn-mini  center-block' value='Detalle' " +
+                        "onclick='verDetalleDia(" + item.fecha + "," + item.personId + ")'/></td></tr>";
                     $("#reporteEmpleado").append(srtHtml);
                 });
                 $("#reporteEmpleado").append("</tbody>");
