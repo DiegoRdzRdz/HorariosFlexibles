@@ -1,0 +1,135 @@
+html,body { font-family: "texgyreherosregular", sans-serif, Helvetica, Arial !important; }
+
+.rot { background: red; } .grun { background: green; }
+
+.mBlue_bg { background: #02A8F3; } .mBlue { color: #02A8F3; }
+
+.h100 { height: 100%; } .vcenter { position: relative; top: 50%; transform: translateY(-50%); }
+
+.noPadding { padding:0; } .noMaringLR { margin-left: 0; margin-right: 0; }
+
+.mTop { margin-top: 20px; }
+
+.form-control { border-radius: 0;  border: none; } .blue-btn { height: 50px; background: #02A8F3; color: #FFF; font-size: 2.5rem; font-family: texgyreherosregular, Sans-Serif; text-transform: uppercase; }
+
+.tables-title { color: #888; text-transform: uppercase; }
+
+.recuadro-line { height: 50px; border:1px solid #F5F5F5; }
+.rec-1-left {  } .rec-1-right { border-left: none;  }
+.rec-2-left { border-top: none; } .rec-2-right { border-left: none; border-top: none; }
+.rec-3-left { border-top: none; } .rec-3-right { border-left: none; border-top: none; }
+
+	.recuadro-line > .k-datepicker { width: 100%; border-radius: 0; background: none; }
+	#fechaInicial, /*#fechaFinal,*/ #horasSolicitadas, #minutosSolicitados, .k-input { transform: translateY(0%); }
+
+/* DESDE ÉSTA LINEA ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#app-submenu { position: absolute; right: 0; width: 120px; height: 100%; }
+
+	#sub-menu-btn { position: absolute; top: 50%; margin-top: -20px; left: 50%; }
+
+	#sb-side-left, #sb-side-right { width: 60px; float: left; }
+
+		.app-submenu-btn { width: 60px; height: 62px; border: none; border-radius: 0; } .app-submenu-btn-hrs-flex { height: 30px; }
+		.sub-menu-close { color: #FFF; background: #EB4D5C; } .sub-menu-normal { background: #F5F5F5; } .sub-menu-open { background: #02A8F3; }
+
+		#sb-home, #sb-cerrar , #sb-reporte-eventos, #sb-horas-recuperacion-viaje, #sb-reporte-empleados { margin-left: 120px; }
+		#sb-home { background: #333; } #sb-home:hover { color: #FFF; }
+		#sb-cerrar:hover { color: #EB4D5C; }
+
+/* HASTA ÉSTA LINEA ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+.ver-detalle-btn { width: 20px; height: 23px; border: none; border-radius: 0; color: #FFF; font-size: 2rem; }
+
+.suicher > .bootstrap-switch { position: relative; top: 25%; transform: translateY(-50%); transform: translateX(50%); }
+.bootstrap-switch-handle-on .bootstrap-switch-primary { max-width: 20px; }
+
+.k-combobox { width: 100%; }
+
+
+/* --------------------------- */
+/* LOGIN */
+/* --------------------------- */
+
+#login-top { height: 38.20vh; }
+#login-contenido { height: 61.80vh; }
+
+#login-holder input { height: 5rem }
+
+#login-holder { box-shadow: 2px 2px 4px rgba(0,0,0,.25); }
+
+	.login-btn { border-bottom: 2px solid #02A8F3; }
+
+#footer { position: absolute; bottom: 0px; width: 100%; height: 5px; }
+
+
+/* --------------------------- */
+/* AREAS */
+/* --------------------------- */
+
+#top-bar { height: 50px; }
+	
+	.top-icon-left { height: 100%; }
+
+	#logout , #user-name { height: 100%; }
+
+	#app-name-top { color: #FFF; }
+
+	.top-icon-right { background: purple; height: 40px; width: 40px; border-radius: 100px; overflow: hidden; }
+
+	#user-img-b { max-width: 110px; max-height: 110px; border-radius: 100px; display: inline-block; overflow: hidden; box-shadow: 2px 3px 4px rgba(0,0,0,.25); }
+
+	.nombre { font-family: texgyreherosregular, serif; }
+
+	#top-bar.home-line { border-bottom: 1px solid #E5E5E5; }
+
+#second-area { position: relative; height: 250px; overflow: hidden; width:100%; }
+
+#mid-bar { height: 40px; font-family: texgyreherosregular, Sans-Serif; }
+	
+	.mid-app-icon-name {  }
+
+	.mid-app-title { color: #FFF; margin-top: 7px; }
+	.mid-app-title.mat-b { font-size: 14px; margin-top: 9px; }
+
+#contenido-area { }
+
+	.app-btn { height: 130px; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5; }
+
+		.app-icon { height: 100%; }
+
+			.app-icon img { width: 80%; }
+
+		.info-area { height: 100%; }
+
+			.app-quick-info { height: 65%; margin-top: 13%; font-family: texgyreherosregular, Sans-Serif; }
+
+				.HR-hrs-trabajadas-blue > h1 { display: inline-block; margin: 0; padding: 0; font-weight: normal; font-size: 2.25rem; }
+				.HR-hrs-trabajadas-grey { display: inline-block; color: #AFBDC4; line-height: 20px; font-size: 1.25rem; }
+
+			.qi-vertical-line { width: 1px; height: 80%; background: #8FA3AD; }
+
+			.app-notifications { height: 100%; }
+
+				.ntf-bubble { position: absolute; height: 22px; width: 22px; left: 50%; top: 35%; background: #EB4D5C; border: 2px solid #FFF; border-radius: 100px; z-index: 1; }
+					.ntf-bubble > p { color: #FFF; text-align: center; margin: 2px 0 0 1px; padding: 0; font-size: 1.05rem; }
+
+		.app-name { position: absolute; height: 25%; bottom: 5px; color: #AFBDC4; font-size: 1.5rem; text-transform: uppercase; }
+
+			.app-name > p { font-family: texgyreherosregular, Sans-Serif; }
+
+
+
+
+/* --------------------------- */
+/* APPS BGs */
+/* --------------------------- */
+
+.bg_reporte-empleados { background: url('../img/bg_reporte-empleados.png') center center no-repeat; }
+
+
+
+
+
