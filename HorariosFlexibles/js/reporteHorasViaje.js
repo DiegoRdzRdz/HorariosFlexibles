@@ -69,12 +69,12 @@ function verDetalle(evento) {
     if (evento.autorizadoPor == 0) {
         evento.autorizadoPor = "Sin procesar";
     }
-    var strHtml = "<tr class='dtl'><td>Fecha</td><td>" + evento.fecha + "</td></tr>" +
-        "<tr class='dtl'><td>Horas</td><td>" + evento.horas + "</td></tr>" +
-        "<tr class='dtl'><td>Estatus</td><td>" + evento.estatus + "</td></tr>" +
-        "<tr class='dtl'><td>Comentario</td><td>" + evento.comentario + "</td></tr>" +
-        "<tr class='dtl'><td>Procesado por</td><td>" + evento.autorizadoPor + "</td></tr>";
-    $(".dtl").remove();
+    var strHtml = "<tr class='textoEtiqueta'><td>Fecha</td><td>" + evento.fecha + "</td></tr>" +
+        "<tr class='textoEtiqueta'><td>Horas</td><td>" + evento.horas + "</td></tr>" +
+        "<tr class='textoEtiqueta'><td>Estatus</td><td>" + evento.estatus + "</td></tr>" +
+        "<tr class='textoEtiqueta'><td>Comentario</td><td>" + evento.comentario + "</td></tr>" +
+        "<tr class='textoEtiqueta'><td>Procesado por</td><td>" + evento.autorizadoPor + "</td></tr>";
+    $(".textoEtiqueta").remove();
     $("#detalle").append(strHtml);
     if ($("#comboEmpleados").val() != personId && evento.autorizadoPor == "Sin procesar") {
         var fechaActual = new Date();

@@ -130,3 +130,7 @@ html,body { font-family: "texgyreherosregular", sans-serif, Helvetica, Arial !im
 /* --------------------------- */
 
 .bg_reporte-empleados { background: url('../img/bg_reporte-empleados.png') center center no-repeat; }
+
+.etiqueta {font-size: 14px; font-family: Verdana; font-weight: bold; text-align: right; 
+    background-color: #0066CC; color: #FFFFFF;}
+.textoEtiqueta {font-size: 14px; font-family: Verdana; }
