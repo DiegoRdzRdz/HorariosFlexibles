@@ -33,7 +33,7 @@ function actualizaReporte(form) {
 
 function generaReporte(fechaInicial, fechaFinal, personId) {
     var srtHtml;
-    var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + "-115" +
+    var urlServ = "http://cloud.metalsa.com/BusServiceMetalsa-war/service/person/" + personId +
         "/fechaInicio/" + fechaInicial + "/fechaFin/" + fechaFinal + "/reporteEmpleadosHF";
     $.getJSON(urlServ,
         function (data) {
