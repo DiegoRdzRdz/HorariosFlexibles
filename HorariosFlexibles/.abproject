@@ -2,10 +2,10 @@
   "ProjectName": "HorariosFlexibles",
   "ProjectGuid": "b7fcfa96-a79f-4f22-97ed-8ae409b57f76",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.PortalMetlasa",
-  "DisplayName": "Portal Metalsa",
+  "AppIdentifier": "com.metalsamobile.PortalMetlasa",
+  "DisplayName": "Metalsa Mobile",
   "Author": "",
-  "Description": "Portal Metalsa",
+  "Description": "Metalsa Mobile",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -40,5 +40,6 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
-  ]
+  ],
+  "iOSDeploymentTarget": "6.0"
 }
