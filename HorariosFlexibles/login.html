@@ -1,0 +1,38 @@
+<div class="container">
+    <div id="login-top" class="row">
+        <div class="col-xs-8 col-xs-offset-2 vcenter">
+            <img src="img/logoMetalsa-blue.png" class="img-responsive center-block">
+        </div>
+        <!-- logo -->
+    </div>
+    <!-- row -->
+    <div id="login-contenido" class="row">
+        <div id="login-holder" class="col-xs-8 col-xs-offset-2">
+            <div class="row">
+                <img src="img/login.png" class="img-responsive">
+            </div>
+            <!-- imagen -->
+            <div id="login" class="row">
+                <form ng-submit="login()">
+                    <div>
+                        <input type="email" class="form-control" placeholder="Email" id="email" ng-model="email" required/>
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password" id="pwd" ng-model="pwd" required/>
+                    </div>
+                    <div>
+                        <input class="btn btn-default form-control mBlue login-btn" value="Log in" type='submit' />
+                    </div>
+                </form>
+            </div>
+            <!-- login -->
+        </div>
+        <!-- col xs 8 LOGIN -->
+    </div>
+    <!-- row -->
+    <div id="dlgMessage" class="col-xs-12" title="">
+        <div id="contentMessage">
+        </div>
+    </div>
+    <!-- dlgDetalleDia -->
+</div>

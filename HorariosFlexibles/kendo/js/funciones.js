@@ -127,7 +127,7 @@ function muestraMensajeEvento(tipo, mensaje, nombreDialog, location) {
     }
 }
 
-function cargaMenuHF() {
+function cargaMenuHF(permisos) {
     var btnHome = "<!-- submenu btn --><div id='sb-side-left'><button id='sb-home' type='button' class='btn btn-default " +
         "app-submenu-btn mBlue animated' aria-label='Left Align' onclick='reportePersonal()'><span class='glyphicon " +
         "glyphicon-home' aria-hidden='true'></span></button><!-- HOME --></div>";
@@ -144,7 +144,7 @@ function cargaMenuHF() {
         "app-submenu-btn sub-menu-close animated' aria-label='Left Align'><span class='glyphicon glyphicon-remove' " +
         "aria-hidden='true'></span></button><!-- CERRAR -->";
     var end = "</div><!-- submenu side right -->";
-    $.each(JSON.parse(permisos), function (i, item) {
+    $.each(permisos, function (i, item) {
         if (item.appId == 19) {
             $.each(item.permisos, function (j, item2) {
                 if (item2 == 5) {
